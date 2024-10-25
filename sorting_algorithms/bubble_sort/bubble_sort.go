@@ -2,6 +2,8 @@ package BubbleSort
 
 //comparing and switching two adjecent elements
 //speed: O(n^2)
+//for small data sets - meh, ok
+//for big data sets - hell no
 
 func bubbleSort(arr []int) []int {
 	var i, j int
