@@ -31,8 +31,8 @@ func TestBFS(t *testing.T) {
 	root.Right = &node2
 	node1.Left = &node3
 	node1.Right = &node4
-	node4.Left = &node5
-	node4.Right = &node6
+	node2.Left = &node5
+	node2.Right = &node6
 
 	res := Breadth_First_Search(&root)
 	if !reflect.DeepEqual(res, []any{1, 2, 3, 4, 5, 6, 7}) {
