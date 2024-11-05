@@ -1,4 +1,4 @@
-package TreeTraversal
+package Depth_First_Search
 
 type Node struct {
 	Value any

@@ -1,11 +1,11 @@
-package TreeTraversal
+package Depth_First_Search
 
 import (
 	"reflect"
 	"testing"
 )
 
-func TestTreeTraversal(t *testing.T) {
+func TestDFS(t *testing.T) {
 	root := Node{
 		Value: 1,
 	}
