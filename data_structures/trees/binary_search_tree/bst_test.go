@@ -4,13 +4,18 @@ import "testing"
 
 func TestBST(t *testing.T) {
 	root := Node{
-		Value: 10,
+		Value:       10,
+		Nodes_Left:  3,
+		Nodes_Right: 4,
 	}
 	node1 := Node{
-		Value: 7,
+		Value:       7,
+		Nodes_Left:  1,
+		Nodes_Right: 1,
 	}
 	node2 := Node{
-		Value: 19,
+		Value:       19,
+		Nodes_Right: 3,
 	}
 	node3 := Node{
 		Value: 5,
@@ -19,7 +24,9 @@ func TestBST(t *testing.T) {
 		Value: 8,
 	}
 	node5 := Node{
-		Value: 23,
+		Value:       23,
+		Nodes_Left:  1,
+		Nodes_Right: 1,
 	}
 	node6 := Node{
 		Value: 20,
@@ -43,6 +50,37 @@ func TestBST(t *testing.T) {
 	t.Run("Find", func(t *testing.T) {
 		if Find(&root, 3) {
 			t.Errorf("\nexpected: %v\ngot: %v", false, true)
+		}
+	})
+
+	t.Run("Insert", func(t *testing.T) {
+		Insert(&root, 6)
+		if !Find(&root, 6) {
+			t.Errorf("\nexpected: %v\ngot: %v", true, false)
+		}
+	})
+	t.Run("Insert", func(t *testing.T) {
+		Insert(&root, 18)
+		Insert(&root, 16)
+		if !Find(&root, 16) {
+			t.Errorf("\nexpected: %v\ngot: %v", true, false)
+		}
+	})
+
+	t.Run("Delete", func(t *testing.T) {
+		Delete(&root, 5)
+		Delete(&root, 19)
+		if Find(&root, 5) {
+			t.Errorf("\nexpected: %v\ngot: %v", false, true)
+		}
+		if Find(&root, 19) {
+			t.Errorf("\nexpected: %v\ngot: %v", false, true)
+		}
+		if !Find(&root, 6) {
+			t.Errorf("\nexpected: %v\ngot: %v", true, false)
+		}
+		if !Find(&root, 20) {
+			t.Errorf("\nexpected: %v\ngot: %v", true, false)
 		}
 	})
 }
